@@ -31,8 +31,9 @@ export default function SignIn() {
     <button title="Sign In"  type="submit" className="sign-in_btn">
       <span>Sign In</span>
     </button>
-    <NavLink to={'/signUp'}>
-      <span>Signup</span>
+    <NavLink className='sign-btn-link' to={'/signUp'}>
+      <span className="create-account-span">Don't have account?</span>
+      SignUp
     </NavLink>
     <p className="note">Terms of use &amp; Conditions</p>
   </form>

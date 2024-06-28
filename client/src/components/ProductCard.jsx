@@ -1,5 +1,5 @@
 
-export default function ProductCard({image,brand,description,formattedPrice}) {
+export default function ProductCard({image,brand,description,formattedPrice,children}) {
   return (
     <a className="product-card" href="#dolce-gabbana-cropped">
       <img className="product-card__image" src={image} />
@@ -14,10 +14,9 @@ export default function ProductCard({image,brand,description,formattedPrice}) {
           />
         </svg>
       </button>
-      <button title="Sign In"  type="submit" className="addcart-in_btn">
-      <span>Add cart</span>
-      <i className="fa-solid fa-cart-shopping"></i>
-    </button>
+     <>
+     {children}
+     </>
     </a>
   )
 }

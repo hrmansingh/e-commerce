@@ -22,7 +22,13 @@
   padding: 0 1rem;
   min-height: 100px;
 }
-
+.nav-link-text{
+  color: #25262A;
+}
+.nav-link-text:hover{
+  transition:  all .4s ease-in-out;
+  color:#115DFC;
+}
 .navLink ul{
   display: flex;
 }
@@ -66,6 +72,16 @@
   font-family: "Inter", sans-serif;
 }
 
+.create-account-span{
+ color: #8B8E98;
+}
+.sign-btn-link{
+  text-decoration: none;
+}
+.create-account-span02{
+  color: #8B8E98;
+  margin-left: .4rem;
+}
 .logo_container {
   box-sizing: border-box;
   width: 80px;
@@ -96,7 +112,7 @@
   max-width: 80%;
   text-align: center;
   line-height: 1.1rem;
-  color: #8B8E98
+  color: #8B8E98;
 }
 
 .input_container {
@@ -128,6 +144,7 @@
   padding: 0 0 0 40px;
   border-radius: 7px;
   outline: none;
+  color: #000;
   border: 1px solid #e5e5e5;
   filter: drop-shadow(0px 1px 0px #efefef)
     drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
@@ -209,9 +226,82 @@
 }
 
 /* Home */
+.Trending{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+}
+.title-arrivals{
+  border: 1px solid black;
+  padding: .3rem;
+  max-width: 350px;
+  border-top-right-radius: 11px;
+  border-bottom-right-radius:11px;
+  background-color:#25262A;
+  color: #efefef;
+  transform:rotate(-15deg);
+  z-index: 3;
+}
+.payday-sale{
+  background: url('./assets/leone-venter-mTkXSSScrzw-unsplash.jpg');
+  min-width: 100%;
+  min-height: 100vh;
+  background-attachment: fixed;
+  position: relative;
+}
+.payday-container{
+  padding: 1rem;
+  position: absolute;
+  bottom: 200px;
+}
+
+.sale-now{
+  border-radius: 10px;
+  max-width:300px;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  background-color:black;
+  transform:rotate(-5deg);
+  box-shadow: 15px 0px 0px -3px rgba(0,0,0,0.1);
+}
+.payday,
+.sale{
+  color: #ccc;
+  font-size: 44px;
+}
+.spend-container{
+  background-color: #25262A;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: .5rem;
+  transform:rotate(5deg);
+  box-shadow: 17px 0px 0px -6px rgba(0,0,0,0.1);
+}
+/* .offer{
+
+}
+.offer-deadline{
+
+} */
+.date-offer,
+.spend-mini,
+.term-offer{
+  color: #e5e5e5;
+}
 
 
 
+.showNow-btn{
+  background-color: #115DFC;
+  max-width: 110px;
+  padding: .4rem .5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.offer-btn{
+  color: #e5e5e5;
+  text-decoration: none;
+}
 /* prdoducts card */
 
 .productCard-container{
@@ -280,6 +370,7 @@
   fill: lightgrey;
 }
 .addcart-in_btn{
+  text-decoration: none;
   background-color:#115DFC;
   border: none;
   color: white;
