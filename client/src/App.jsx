@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <NavLinks logo={"E-commerce"} home={"Home"} products={'Products'} signIn={'Sign In'} Addcart={<i className="fa-solid fa-cart-shopping"></i>} />
+      <NavLinks logo={"YOSHOP"} home={"Home"} products={'Products'} signIn={'Sign In'} Addcart={<i className="fa-solid fa-cart-shopping"></i>} />
       <Outlet/>
       <Footer/>
     </>

@@ -1,11 +1,7 @@
-import { userModel } from "../models/user.js";
+import { adminModel } from "../models/user.js";
 import { Router } from "express";
 
 const router = Router();
-
-// export const loginRoute = async (req, res) => {
-//   res.send("This iis the login page API");
-// };
 
 router.get("/", (req, res) => {
   res.status(200).send("This iis the login page API");
@@ -13,8 +9,8 @@ router.get("/", (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const user = new userModel({
-      name: "testjbjhbk43543user",
+    const user = new adminModel({
+      name: "QuadB",
       // email: "test@gmail.com",
       // password: "test123",
     });
