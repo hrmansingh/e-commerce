@@ -6,7 +6,7 @@
 }
 /* logo */
 .logo{
-  font-size: 22px;
+  font-size: 30px;
 }
 /* navigation link */
 .container{
@@ -17,6 +17,7 @@
 }
 .nav-container{
   display: flex;
+  min-width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
@@ -38,7 +39,7 @@
 }
 
 .navLink a{
-  font-size: 22px;
+  font-size: 30px;
   text-decoration: none;
 }
 
@@ -50,7 +51,7 @@
   padding: 0 0 0 1rem;
 }
 .nav-link01 a{
-  font-size: 22px;
+  font-size: 30px;
   text-decoration: none;
 }
 /* sign in */
@@ -252,7 +253,7 @@
 .payday-container{
   padding: 1rem;
   position: absolute;
-  bottom: 200px;
+  bottom: 280px;
 }
 
 .sale-now{
@@ -539,6 +540,15 @@ font-size: 50px;
 margin: 0;
 font-size: 26px;
 }
+.quantity{
+margin-top: .8rem;
+}
+.quantity-items{
+ font-size: 26px;
+}
+.quantity-items span{
+  margin-left: 1rem;
+}
 /* footer */
 .footer-distributed{
 	background: rgb(0, 0, 0);
@@ -718,5 +728,6 @@ form button{
   background: #25262A;
   color: #fff;
   padding-top: 20px;
+  font-size: 25px;
   text-align: center;
 }

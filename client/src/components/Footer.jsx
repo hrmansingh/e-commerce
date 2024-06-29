@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
         </div>
         <div className="footer-2">
-            <p>© {date.getFullYear()} | Made with ❤️ by Harman Dev. All Rights Reserved.</p>
+            <p>© {date.getFullYear()} E-commerce Site. All Rights Reserved.</p>
         </div>
         </div>
     </footer>

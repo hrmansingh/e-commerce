@@ -1,5 +1,15 @@
+import { useState } from 'react'
 import img from '../assets/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg'
 export default function Addcart() {
+  const [count,setCount] = useState(0)
+  function quantityAdd(){
+    setCount((prev)=> prev + 1);
+  }
+  function quantityRemove(){
+    if(count > 0){
+      setCount((prev)=> prev - 1);
+    }
+  }
   return (
     <>
     <div className="title">
@@ -15,9 +25,12 @@ export default function Addcart() {
           <h4 className="shopping-cart-content">white</h4>
         </div>
         <div className="quantity-items-btn">
-          <button className="items-plus"><i className="fa-solid fa-plus"></i></button>
-          <span className="count-items">1</span>
-          <button className="items-minus"><i className="fa-solid fa-minus"></i></button>
+          <button onClick={quantityAdd} className="items-plus"><i className="fa-solid fa-plus"></i></button>
+          <span className="count-items">{count}</span>
+          <button onClick={quantityRemove} className="items-minus"><i className="fa-solid fa-minus"></i></button>
+          <div className="quantity">
+            <p className='quantity-items'>Quantity<span><i className="fa-solid fa-box"></i></span></p>
+          </div>
         </div>
         <div className="shopping-cart-price">
           <p className="shopping-pricing">$599</p>
