@@ -3,9 +3,11 @@ import mongoose from "mongoose";
 import { Router } from "express";
 import dotenv from "dotenv";
 import adminRouter from "./admin/routes/index.js";
+import cors from "cors";
 const app = express();
 const router = Router();
 app.use(express.json());
+app.use(cors("*"));
 dotenv.config();
 
 // ------------------connecttion------------------------------------

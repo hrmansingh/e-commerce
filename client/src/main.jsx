@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
@@ -8,6 +8,7 @@ import Products from './components/Products.jsx'
 import SignIn from './components/SignIn.jsx'
 import Addcart from './components/Addcart.jsx'
 import SignUp from './components/SignUp.jsx'
+import ProductDetails from './components/ProductDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -33,14 +34,16 @@ const router = createBrowserRouter([
         element: <SignUp/>,
       },
       {
-        path:"/Addcart",
+        path:"/Addcart/:id",
         element: <Addcart/>
+      },
+      {
+        path:"/ProductDetails/:id",
+        element: <ProductDetails/>
       }
     ]
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
   <RouterProvider router={router} />
-  </React.StrictMode>,
 )

@@ -1,6 +1,7 @@
 import { adminModel } from "../models/admin.js";
 import dotenv from "dotenv";
 import * as bcrypt from "bcrypt";
+import { Statuses } from "../../constant.js";
 dotenv.config();
 export const createAdmin = async (req, res) => {
   try {
@@ -15,15 +16,19 @@ export const createAdmin = async (req, res) => {
         password: hashedPassword,
       });
       const saved = await user.save();
-      res.status(200).send(`here is the admin route ${saved}`);
+      console.log(`here is the admin route ${saved}`, "sucess");
+      res.status(Statuses.CREATED).send({
+        message: `successfully admin created!...`,
+        status: "success",
+      });
     } else {
       res
-        .status(400)
+        .status(Statuses.BAD_REQUEST)
         .json({ message: "Email already exists", status: "failed" });
     }
   } catch (err) {
     console.log("error in admin route", err);
-    res.status(400).send({
+    res.status(Statuses.BAD_REQUEST).send({
       message: `error while creating admin ${err}`,
       status: "failed",
     });

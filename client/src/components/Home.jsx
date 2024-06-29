@@ -7,6 +7,26 @@ import ProductCard from './ProductCard';
 import { NavLink } from 'react-router-dom';
 
 export default function Home() {
+  const trendingProducts=[
+    {
+      id:1,
+      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
+      brand:"Sweat shirt & Hoodies",
+      description:"explore Now",
+    },
+    {
+      id:2,
+      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
+      brand:"Sweat shirt & Hoodies",
+      description:"explore Now",
+    },
+    {
+      id:3,
+      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
+      brand:"Sweat shirt & Hoodies",
+      description:"explore Now",
+    }
+  ]
   
   return (
     <>
@@ -36,21 +56,15 @@ export default function Home() {
 
   <h1 className='title-arrivals'>NEW ARRIVALS</h1>
   <section className='Trending'>
-  <ProductCard image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
-      brand={"Sweat shirt & Hoodies"}
-      description={"explore Now"}
-      children={<NavLink to={'/products'}><i class="fa-solid fa-arrow-right"></i></NavLink>}
-    />
-  <ProductCard image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
-      brand={"OverSize T-shirts Collections"}
-      description={"explore Now"}
-      children={<NavLink to={'/products'}><i class="fa-solid fa-arrow-right"></i></NavLink>}
-    />
-  <ProductCard image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
-      brand={"Jeans & Shoes"}
-      description={"explore Now"}
-      children={<NavLink to={'/products'}><i class="fa-solid fa-arrow-right"></i></NavLink>}
-    />
+    {trendingProducts.map((trending)=>(
+  <ProductCard key={trending.id} links={'/products'} image={trending.image}
+      brand={trending.brand}
+      description={trending.description}
+    >
+    <NavLink to={'/products'}><i className="fa-solid fa-arrow-right"></i></NavLink>
+    </ProductCard>
+
+    ))}
   </section>
 
   <div className="payday-sale">

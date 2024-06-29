@@ -6,7 +6,9 @@ export default function NavLinks({logo,home,products,signIn,Addcart}) {
   return (
     <header className="container">
         <nav className="nav-container">
-            <div className="logo">{logo}</div>
+            <h1 className="logo">
+              {logo}
+              </h1>
                 <div className="nav-link01">
               <ul>
                     <li><NavLink className='nav-link-text' to='/'>{home}</NavLink></li>

@@ -8,11 +8,11 @@ export default function Footer() {
         <div className="footer">
 
         <div className="footer-container">
-            <div className="col-1">
+            {/* <div className="col-1">
                 <img src="/" alt="add image"/>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, maxime molestias sapiente labore doloribus ut animi, tenetur, aliquid quaerat praesentium obcaecati laudantium!
                 </p>
-            </div>
+            </div> */}
             <div className="col-2">
                 <h3>Quick Links</h3>
                 <ul>
@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
         </div>
         <div className="footer-2">
-            <p>© {date.getFullYear()} | Made with ❤️ by Harman Dev. All Rights Reserved.</p>
+            <p>© {date.getFullYear()} E-commerce Site. All Rights Reserved.</p>
         </div>
         </div>
     </footer>
