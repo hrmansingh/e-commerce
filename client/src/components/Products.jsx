@@ -29,13 +29,13 @@ export default function Products() {
   return (
     <div className="productCard-container">
       {products?.map((product)=>(
-      <ProductCard key={product.id} links={'/ProductDetails'} image={product.image}
+      <ProductCard key={product.id} links={`/ProductDetails/${product.id}`} image={product.image}
       brand={product.brand}
       description={product.description}
       formattedPrice={product.price}
       >
 
-        <NavLink to={'/addcart'} title="Sign In"  type="submit" className="addcart-in_btn">
+        <NavLink to={`/addcart/${product.id}`} title="Sign In"  type="submit" className="addcart-in_btn">
       <span>Add cart</span>
       <i className="fa-solid fa-cart-shopping"></i>
       </NavLink>
