@@ -56,7 +56,7 @@ export default function Home() {
 
   <h1 className='title-arrivals'>NEW ARRIVALS</h1>
   <section className='Trending'>
-    {trendingProducts.map((trending)=>(
+    {trendingProducts?.map((trending)=>(
   <ProductCard key={trending.id} links={'/products'} image={trending.image}
       brand={trending.brand}
       description={trending.description}

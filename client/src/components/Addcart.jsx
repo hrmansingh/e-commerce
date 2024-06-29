@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import img from '../assets/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg'
-export default function Addcart({location}) {
+export default function Addcart() {
   // const product = location.state.product;
   const [count,setCount] = useState(0)
   function quantityAdd(){
