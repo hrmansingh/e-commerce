@@ -36,21 +36,23 @@ export default function Home() {
 
   <h1 className='title-arrivals'>NEW ARRIVALS</h1>
   <section className='Trending'>
-  <ProductCard image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
+  <ProductCard links={'/products'} image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
       brand={"Sweat shirt & Hoodies"}
       description={"explore Now"}
-      children={<NavLink to={'/products'}><i class="fa-solid fa-arrow-right"></i></NavLink>}
-    />
-  <ProductCard image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
+    >
+    <NavLink to={'/products'}><i className="fa-solid fa-arrow-right"></i></NavLink>
+    </ProductCard>
+  <ProductCard links={'/products'} image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
       brand={"OverSize T-shirts Collections"}
       description={"explore Now"}
-      children={<NavLink to={'/products'}><i class="fa-solid fa-arrow-right"></i></NavLink>}
-    />
-  <ProductCard image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
+    >
+      <NavLink to={'/products'}><i className="fa-solid fa-arrow-right"></i></NavLink>
+    </ProductCard>
+  <ProductCard links={'/products'} image={"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"}
       brand={"Jeans & Shoes"}
       description={"explore Now"}
-      children={<NavLink to={'/products'}><i class="fa-solid fa-arrow-right"></i></NavLink>}
-    />
+    ><NavLink to={'/products'}><i className="fa-solid fa-arrow-right"></i></NavLink>
+    </ProductCard>
   </section>
 
   <div className="payday-sale">
