@@ -5,9 +5,10 @@ import img3 from '../assets/ian-dooley-TT-ROxWj9nA-unsplash.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductCard from './ProductCard';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Home() {
-  const trendingProducts=[
+  const [trendingProducts,setTrendingProducts]=useState([
     {
       id:1,
       image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
@@ -27,7 +28,7 @@ export default function Home() {
       description:"explore Now",
     }
   ]
-  
+  )
   return (
     <>
     <CCarousel className='my-2' controls indicators dark>
