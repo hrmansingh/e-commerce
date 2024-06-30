@@ -34,6 +34,10 @@ const router = createBrowserRouter([
         element: <SignUp/>,
       },
       {
+        path:"/Addcart/",
+        element: <Addcart/>
+      },
+      {
         path:"/Addcart/:id",
         element: <Addcart/>
       },

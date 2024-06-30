@@ -1,10 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { useState } from "react";
 
 
 export default function Products() {
- 
      const [data,setData]=useState([
     {
       id:1,
@@ -30,13 +29,14 @@ export default function Products() {
   ])
   return (
     <div className="productCard-container">
-      {data?.map((product)=>(
-      <ProductCard  key={product.id} links={`/ProductDetails/${product.id}`} image={product.image}
+      {
+      data?.map((product)=>(
+      <ProductCard key={product.id}  links={`/ProductDetails/${product.id}`} image={product.image}
       brand={product.brand}
       description={product.description}
       formattedPrice={product.price}
       >
-
+       
         <NavLink to={`/addcart/${product.id}`} title="Sign In" type="submit" className="addcart-in_btn">
       <span>Add cart</span>
       <i className="fa-solid fa-cart-shopping"></i>

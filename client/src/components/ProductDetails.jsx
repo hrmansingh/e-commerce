@@ -1,5 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 export default function ProductDetails() {
+   let location = useLocation();
+   console.log(location.state)
   return (
     <section className="product-details-container">
        <div className="img-details">

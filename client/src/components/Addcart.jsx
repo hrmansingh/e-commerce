@@ -26,9 +26,9 @@ export default function Addcart() {
           <h4 className="shopping-cart-content">white</h4>
         </div>
         <div className="quantity-items-btn">
-          <button onClick={quantityAdd} className="items-plus"><i className="fa-solid fa-plus"></i></button>
+          <button onClick={quantityRemove} className="items-plus"><i className="fa-solid fa-minus"></i></button>
           <span className="count-items">{count}</span>
-          <button onClick={quantityRemove} className="items-minus"><i className="fa-solid fa-minus"></i></button>
+          <button onClick={quantityAdd} className="items-minus"><i className="fa-solid fa-plus"></i></button>
           <div className="quantity">
             <p className='quantity-items'>Quantity<span><i className="fa-solid fa-box"></i></span></p>
           </div>
