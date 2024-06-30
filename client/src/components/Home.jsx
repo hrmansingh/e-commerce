@@ -1,7 +1,7 @@
 import { CCarousel, CCarouselCaption, CCarouselItem, CImage } from '@coreui/react';
 import img from '../assets/henry-co-cp-VMJ-mdKs-unsplash.jpg'
-import img2 from '../assets/engin-akyurt-lJ9A-UopMJE-unsplash.jpg'
-import img3 from '../assets/ian-dooley-TT-ROxWj9nA-unsplash.jpg'
+import img2 from '../assets/jason-leung-DmD8HVOjy4c-unsplash.jpg'
+import img3 from '../assets/tuananh-blue-_sNZ8XOm52w-unsplash.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductCard from './ProductCard';
 import { NavLink } from 'react-router-dom';

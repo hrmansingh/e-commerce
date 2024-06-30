@@ -1,7 +1,7 @@
 import { NavLink} from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { useState } from "react";
-import img from '../assets/ruben-valenzuela-XDceSuA9gqE-unsplash.jpg'
+import img from '../assets/daria-magazzu-HKXXkHhA3rk-unsplashdsd.jpg'
 import img2 from '../assets/pat-kwon-EJTjetc8tPs-unsplash.jpg'
 
 export default function Products() {
@@ -17,7 +17,7 @@ export default function Products() {
     },
     {
       id:2,
-      brand: 'Levie',
+      brand: `levi's`,
       description: ' Jeans leaf-print shirt',
       price: '$600',
       image:img,
