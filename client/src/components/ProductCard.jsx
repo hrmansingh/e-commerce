@@ -1,8 +1,8 @@
 import { NavLink} from 'react-router-dom';
 
-export default function ProductCard({image,brand,description,formattedPrice ,links,children}) {
+export default function ProductCard({image,brand,description,formattedPrice,state,links,children}) {
   return (
-     <NavLink className="product-card" to={links}>
+     <NavLink state={{state}} className="product-card" to={links}>
       <img className="product-card__image" src={image} />
       <p className="product-card__brand">{brand}</p>
       <p className="product-card__description">{description}</p>

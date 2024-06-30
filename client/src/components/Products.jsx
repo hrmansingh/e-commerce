@@ -15,14 +15,14 @@ export default function Products() {
     {
       id:2,
       brand: 'Dlce & Gabbana',
-      description: ' cropped leaf-print shirt',
+      description: ' Jeans leaf-print shirt',
       price: '$600',
       image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"
     },
     {
       id:3,
       brand: 'Dlce & Gabbana',
-      description: ' cropped leaf-print shirt',
+      description: ' Shoes and leaf-print shirt',
       price: '$499',
       image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg"
     }
@@ -30,8 +30,8 @@ export default function Products() {
   return (
     <div className="productCard-container">
       {
-      data?.map((product)=>(
-      <ProductCard key={product.id}  links={`/ProductDetails/${product.id}`} image={product.image}
+        data?.map((product)=>(
+      <ProductCard key={product.id} state={product} links={`/ProductDetails/${product.id}`} image={product.image}
       brand={product.brand}
       description={product.description}
       formattedPrice={product.price}
