@@ -1,8 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+
 
 
 export default function NavLinks({logo,home,products,signIn,Addcart}) {
+  const [totalQuantity,setTotalQuantity]= useState(0)
+  const carts = useSelector(store=>store.cart.items)
+
+  useEffect(()=>{
+     let total = 0;
+     carts.forEach(item=>total +=item.quantity)
+     setTotalQuantity(total);
+  },[carts])
   return (
     <header className="container">
         <nav className="nav-container">
@@ -18,7 +28,7 @@ export default function NavLinks({logo,home,products,signIn,Addcart}) {
             <div className="navLink">
                 <ul>
                     <li><NavLink className='nav-link-text' to='/signIn'>{signIn}</NavLink></li>
-                    <li><NavLink className='nav-link-text' to='/Addcart'>{Addcart}</NavLink></li>
+                    <li><NavLink className='nav-link-text' to='/Addcart'>{Addcart} <small>{totalQuantity}</small></NavLink></li>
                 </ul>
             </div>
         </nav>

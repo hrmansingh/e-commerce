@@ -19,7 +19,7 @@ export default function ProductDetails() {
             <p className="product-description">{element[1].description}</p>
             </div>
             <div className="price">
-            <p className="product-price">{element[1].price}</p>
+            <p className="product-price">{'$' + element[1].price}</p>
            </div>
            <div className="buy-now-btn">
            <NavLink to={'/addcart'} title="Sign In"  type="submit" className="buynow-in_btn">

@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { productData } from "../data/productData"
-export default function Addcart() {
-  const [cartData,setCartData]=useState(productData)
-  const [count,setCount] = useState(0)
+import { useEffect, useState } from "react";
+import { productData } from "../data/productData";
+import img from '../assets/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg'
+
+export default function CartItems(props) {
+    const [count,setCount] = useState(0)
     function quantityAdd(){
       setCount((prev)=> prev + 1);
     }
@@ -11,22 +12,27 @@ export default function Addcart() {
         setCount((prev)=> prev - 1);
       }
     }
-  // const product = location.state.product;
+    const {productId,quantity} = props.data;
+    const [detail,setDetail]=useState([]);
+    useEffect(()=>{
+        const findDetail = productData.filter(product=> product.id === productId)[0]
+        setDetail(findDetail)
+    },[productId])
+    console.log(detail)
+    console.log(productData)
   return (
     <>
     <div className="title">
       <h1 className="title-heading">Shopping Bage <i className="fa-solid fa-tag"></i></h1>
     </div>
     <section className="shopping-cart">
-    {cartData?.map((element)=>(
-
-      <div key={element.id} className="shopping-item">
+      <div className="shopping-item">
         <div className="image-container-shopping">
-          <img className="shopping-cart-image" src={element.image} alt="shoping" />
+          <img className="shopping-cart-image" src={detail.image} alt="sgoping" />
         </div>
         <div className="shopping-cart-description">
-          <h1 className="shopping-cart-heading">{element.brand}</h1>
-          <h4 className="shopping-cart-content">{element.description}</h4>
+          <h1 className="shopping-cart-heading">{detail.brand}</h1>
+          <h4 className="shopping-cart-content">{detail.description}</h4>
         </div>
         <div className="quantity-items-btn">
           <button onClick={quantityRemove} className="items-plus"><i className="fa-solid fa-minus"></i></button>
@@ -37,14 +43,13 @@ export default function Addcart() {
           </div>
         </div>
         <div className="shopping-cart-price">
-          <p className="shopping-pricing">${parseInt(element.price) * count}</p>
+          <p className="shopping-pricing">${detail.price * quantity}</p>
         </div>
         <div className="shopping-cart-buy-btn">
           <button className="place-your-order">Place Your Order</button>
         </div>
       </div>
-  ))}
     </section>
-    </>
+ </>
   )
 }

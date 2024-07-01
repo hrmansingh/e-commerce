@@ -9,7 +9,8 @@ import SignIn from './components/SignIn.jsx'
 import Addcart from './components/Addcart.jsx'
 import SignUp from './components/SignUp.jsx'
 import ProductDetails from './components/ProductDetails.jsx'
-
+import {Provider} from 'react-redux'
+import { store } from './redux/store.jsx'
 
 const router = createBrowserRouter([
 
@@ -49,5 +50,7 @@ const router = createBrowserRouter([
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
   <RouterProvider router={router} />
+  </Provider>
 )
