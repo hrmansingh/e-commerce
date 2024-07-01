@@ -1,8 +1,9 @@
 import { NavLink} from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { useState } from "react";
-import img from '../assets/daria-magazzu-HKXXkHhA3rk-unsplashdsd.jpg'
-import img2 from '../assets/pat-kwon-EJTjetc8tPs-unsplash.jpg'
+import img1 from '../assets/noah-black-u6tjZZOAFqY-unsplash.jpg'
+import img2 from '../assets/ryan-moreno-zA9LXq7lGFU-unsplash.jpg'
+import img3 from '../assets/pat-kwon-EJTjetc8tPs-unsplash.jpg'
 
 export default function Products() {
      const [data,setData]=useState([
@@ -11,7 +12,7 @@ export default function Products() {
       brand: 'Dlce & Gabbana',
       description: ' cropped leaf-print shirt',
       price: '$796',
-      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
+      image:img1,
       productDescription:`1. Our high-quality shirts are made from 100% cotton, ensuring both comfort and durability. With a range of styles and colors to choose from, our shirts are suitable for any occasion, whether it's a casual day out or a formal event. The classic design and perfect fit make our shirts a timeless addition to any wardrobe.
         2. Crafted with attention to detail, our shirts feature reinforced seams and a tailored finish for a polished look. The breathable fabric allows for all-day wear, while the easy-care instructions make maintenance a breeze. Whether you're dressing up or keeping it casual, our shirts are the perfect choice for a stylish and versatile wardrobe essential.`,
     },
@@ -20,7 +21,7 @@ export default function Products() {
       brand: `levi's`,
       description: ' Jeans leaf-print shirt',
       price: '$600',
-      image:img,
+      image:img2,
       productDescription:`Introducing our latest collection of shoes and pants, designed to elevate your style and comfort. Our shoes are crafted with high-quality materials and innovative designs to provide support and durability, while our pants are tailored for a perfect fit and effortless style. Whether you're looking for casual sneakers or formal dress shoes, or comfortable joggers or stylish trousers, our collection has something for every occasion. Elevate your wardrobe with our versatile and fashionable shoes and pants.`
     },
     {
@@ -28,7 +29,7 @@ export default function Products() {
       brand: 'Nike',
       description: ' Shoes and leaf-print shirt',
       price: '$499',
-      image:img2,
+      image:img3,
       productDescription:`1. Stay cozy and stylish with our collection of hoodies, perfect for any casual occasion. Made from high-quality materials, our hoodies are designed to keep you warm and comfortable all day long. With a variety of colors and styles to choose from, you can easily find the perfect hoodie to match your personal taste.
 
 

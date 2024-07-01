@@ -2,6 +2,9 @@ import { CCarousel, CCarouselCaption, CCarouselItem, CImage } from '@coreui/reac
 import img from '../assets/henry-co-cp-VMJ-mdKs-unsplash.jpg'
 import img2 from '../assets/jason-leung-DmD8HVOjy4c-unsplash.jpg'
 import img3 from '../assets/tuananh-blue-_sNZ8XOm52w-unsplash.jpg'
+import trendingImg1 from '../assets/whereslugo-qq-YDhd3bbg-unsplash.jpg'
+import trendingImg2 from '../assets/tobias-van-schneider-gCeCpP15V1o-unsplash.jpg'
+import trendingImg3 from '../assets/irene-kredenets-dwKiHoqqxk8-unsplash.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductCard from './ProductCard';
 import { NavLink } from 'react-router-dom';
@@ -11,20 +14,20 @@ export default function Home() {
   const [trendingProducts,setTrendingProducts]=useState([
     {
       id:1,
-      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
+      image:trendingImg1,
       brand:"Sweat shirt & Hoodies",
       description:"explore Now",
     },
     {
       id:2,
-      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
-      brand:"Sweat shirt & Hoodies",
+      image:trendingImg2,
+      brand:"OverSize T-Shirts Collection",
       description:"explore Now",
     },
     {
       id:3,
-      image:"https://cdn-images.farfetch-contents.com/14/82/97/77/14829777_26844957_1000.jpg",
-      brand:"Sweat shirt & Hoodies",
+      image:trendingImg3,
+      brand:"Brand New Collection Of Shoes",
       description:"explore Now",
     }
   ]
