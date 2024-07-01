@@ -2,12 +2,12 @@ import { NavLink, useLocation} from "react-router-dom";
 export default function ProductDetails() {
        const location = useLocation()
        const data = location.state;
-       let k=Object.entries(data);
+       let productDetails=Object.entries(data);
      return (
          
         <section className="product-details-container">
         {
-      k.map((element)=>(
+      productDetails.map((element)=>(
             <>
          <div className="img-details">
             <img className="product-img" src={element[1].image} alt="img" />
