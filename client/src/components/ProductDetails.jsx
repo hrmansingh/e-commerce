@@ -5,14 +5,14 @@ export default function ProductDetails() {
        let productDetails=Object.entries(data);
      return (
          
-        <section className="product-details-container">
+        <section>
         {
-      productDetails.map((element)=>(
-            <>
-         <div className="img-details">
+           productDetails.map((element)=>(
+         <div key={element[1].id} className="product-details-container">
+         <div  className="img-details">
             <img className="product-img" src={element[1].image} alt="img" />
             </div>
-            <div className="product-content">
+            <div key={element[1].id} className="product-content">
             <h1 className="product-detail-title">{element[1].brand}</h1>
             {/* <h5 className="product-detail-sub-title">Sub Title</h5> */}
             <div className="product-details-description">
@@ -32,10 +32,10 @@ export default function ProductDetails() {
                <p className="description-content">{element[1].productDescription}</p>
                </div>
                </div>
-            </>
+           </div>
          ))
       }
       </section>
       )
-      }
+   }
       

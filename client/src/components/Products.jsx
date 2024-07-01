@@ -4,8 +4,11 @@ import { useState } from "react";
 import img1 from '../assets/noah-black-u6tjZZOAFqY-unsplash.jpg'
 import img2 from '../assets/ryan-moreno-zA9LXq7lGFU-unsplash.jpg'
 import img3 from '../assets/pat-kwon-EJTjetc8tPs-unsplash.jpg'
+import { useDispatch } from "react-redux";
+import { addtoCart } from "../redux/cartSlice";
 
 export default function Products() {
+  const dispatch = useDispatch()
      const [data,setData]=useState([
     {
       id:1,
@@ -47,7 +50,7 @@ export default function Products() {
       formattedPrice={product.price}
       >
        
-        <NavLink to={`/addcart/${product.id}`} title="Sign In" type="submit" className="addcart-in_btn">
+        <NavLink to={`/addcart/${product.id}`} title="Sign In" type="submit" className="addcart-in_btn" onClick={()=> dispatch(addtoCart(product.brand,product.image,product.image))}>
       <span>Add cart</span>
       <i className="fa-solid fa-cart-shopping"></i>
       </NavLink>

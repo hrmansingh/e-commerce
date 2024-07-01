@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 
 
 export default function NavLinks({logo,home,products,signIn,Addcart}) {
