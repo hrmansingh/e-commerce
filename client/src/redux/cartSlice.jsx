@@ -1,18 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 export const  cartSlice = createSlice({
     name : 'cart',
     initialState : {
-        items:[]
+        items:[],
+        carTotalQuantity:0,
+        carTotalAmount:0
     },
     reducers:{
          addToCard(state,action){
-            const {productId,quantity}=action.payload;
+            const {productId,quantity,product}=action.payload;
             const indexProductId=(state.items).findIndex(item=> item.productId === productId);
             if(indexProductId>=0){
                 state.items[indexProductId].quantity += quantity
             }else{
-                state.items.push({productId,quantity});
+                state.items.push({productId ,quantity,product});
             }
          }
     }
