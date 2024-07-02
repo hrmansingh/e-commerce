@@ -259,10 +259,12 @@ content: '';
   z-index: 3;
 }
 .payday-sale{
-  background: url('./assets/leone-venter-mTkXSSScrzw-unsplash.jpg');
+  padding: 0 1rem;
+  background: url('./assets/ivan-kazlouskij-qphr4kDjB-c-unsplash.jpg');
   min-width: 100%;
   min-height: 100vh;
-  background-attachment: fixed;
+ background-attachment:scroll;
+  background-position:calc(100% - 10%); 
   position: relative;
 }
 .payday-container{
