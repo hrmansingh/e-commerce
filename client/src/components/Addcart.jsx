@@ -18,7 +18,7 @@ export default function Addcart() {
       <h1 className="title-heading">Shopping Bags <i className="fa-solid fa-tag"></i></h1>
     </div>
     <section className="shopping-cart">
-    { cart.items.length === 0 ? (<div className="cart-empty"><p>Your cart is currently empty</p></div>) :(cart.items?.map((element)=>(
+    { cart.items.length === 0 ? (<div className="cart-empty"><p>Your cart is currently empty  <i className="fa-regular fa-face-rolling-eyes"></i></p></div>) :(cart.items?.map((element)=>(
 
       <div key={element.product.id} className="shopping-item">
         <div className="image-container-shopping">

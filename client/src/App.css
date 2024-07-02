@@ -530,7 +530,14 @@ cursor: pointer;
 .shopping-cart-content{
 color:#8B8E98;
 }
-
+.cart-empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  border: 1px solid black;
+  min-height: 100vh;
+}
 .items-plus,
 .items-minus,
 .place-your-order{
