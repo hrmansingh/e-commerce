@@ -28,7 +28,7 @@ export default function NavLinks({logo,home,products,signIn,Addcart}) {
             <div className="navLink">
                 <ul>
                     <li><NavLink className='nav-link-text' to='/signIn'>{signIn}</NavLink></li>
-                    <li><NavLink className='nav-link-text' to='/Addcart'>{Addcart} <small>{carts.length}</small></NavLink></li>
+                    <li><NavLink className='nav-link-text' to='/Addcart'>{Addcart} <small className="nav-add-cart-items">{carts.length}</small></NavLink></li>
                 </ul>
             </div>
         </nav>
