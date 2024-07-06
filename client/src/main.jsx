@@ -11,6 +11,10 @@ import SignUp from './components/SignUp.jsx'
 import ProductDetails from './components/ProductDetails.jsx'
 import {Provider} from 'react-redux'
 import { store } from './redux/store.jsx'
+import Admin from './components/Admin.jsx'
+import DashBoard from './components/DashBoard.jsx'
+import Addproduct from './components/Addproduct.jsx'
+import ViewProduct from './components/ViewProduct.jsx'
 
 const router = createBrowserRouter([
 
@@ -35,7 +39,7 @@ const router = createBrowserRouter([
         element: <SignUp/>,
       },
       {
-        path:"/Addcart/",
+        path:"/Addcart",
         element: <Addcart/>
       },
       {
@@ -45,6 +49,26 @@ const router = createBrowserRouter([
       {
         path:"/ProductDetails/:id",
         element: <ProductDetails/>
+      },
+      {
+        path:"/Admin/:id",
+        element: <Admin/>
+      },
+      {
+        path:"/Admin",
+        element: <Admin/>,
+        children:[
+        {
+          path : '/Admin/dashboard',
+          element:<DashBoard/>
+        },{
+          path:'/Admin/addproduct',
+          element:<Addproduct/>
+        },{
+          path:'/Admin/viewproduct',
+          element: <ViewProduct/>
+        }
+        ]
       }
     ]
   }
