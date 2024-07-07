@@ -21,13 +21,13 @@ export default function NavLinks({admin,logo,home,products,signIn,Addcart}) {
               </h1>
                 <div className="nav-link01">
               <ul>
-                    <li><NavLink className='nav-link-text' to='/Admin'>{admin}</NavLink></li>
                     <li><NavLink className='nav-link-text' to='/'>{home}</NavLink></li>
                     <li><NavLink className='nav-link-text' to='/products' >{products}</NavLink></li>
               </ul>
                 </div>
             <div className="navLink">
                 <ul>
+                    <li><NavLink className='nav-link-text' to='/Admin'>{admin}</NavLink></li>
                     <li><NavLink className='nav-link-text' to='/signIn'>{signIn}</NavLink></li>
                     <li><NavLink className='nav-link-text' to='/Addcart'>{Addcart} <small className="nav-add-cart-items">{carts.length===0?false:carts.length}</small></NavLink></li>
                 </ul>

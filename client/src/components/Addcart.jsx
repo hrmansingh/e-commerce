@@ -1,7 +1,9 @@
 import { useState } from "react";
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { removeToCart } from "../redux/cartSlice";
 export default function Addcart() {
   const cart = useSelector((state)=> state.cart);
+  const dispatch=useDispatch();
   const [count,setCount] = useState(1)
     function quantityAdd(){
       setCount((prev)=> prev + 1);
@@ -10,6 +12,9 @@ export default function Addcart() {
       if(count > 1){
         setCount((prev)=> prev - 1);
       }
+    }
+    function handleRemoveCart(cartItem){
+      dispatch(removeToCart(cartItem))
     }
   // const product = location.state.product;
   return (
@@ -40,7 +45,7 @@ export default function Addcart() {
           <p className="shopping-pricing">${parseInt(element.product.price) * count}</p>
         </div>
         <div className="shopping-cart-buy-btn">
-          <button className="place-your-order">Place Your Order</button>
+          <button onClick={()=> handleRemoveCart(element.product.id)} className="place-your-order"><i className="fa-solid fa-xmark"></i></button>
         </div>
       </div>
   )))}

@@ -15,8 +15,13 @@ export const  cartSlice = createSlice({
             }else{
                 state.items.push({productId ,quantity,product});
             }
+         },
+         removeToCart(state, action){
+            const productId= action.payload;
+         const nextcartItems = state.items.filter(item=> item.productId !== productId)
+          state.items= nextcartItems;
          }
     }
 })
-export const {addToCard} =cartSlice.actions;
+export const {addToCard,removeToCart} =cartSlice.actions;
 export default cartSlice.reducer
