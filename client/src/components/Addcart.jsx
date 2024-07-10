@@ -2,18 +2,17 @@ import {useDispatch, useSelector} from 'react-redux'
 import { removeToCart, subtractQuantityItems, updateQuantityItems } from "../redux/cartSlice";
 export default function Addcart() {
   const cart = useSelector((state)=> state.cart);
-  console.log(cart)
   const dispatch=useDispatch();
     function handleRemoveCart(cartItem){
       dispatch(removeToCart(cartItem))
     }
 
     function updateItems(cartItem){
-     console.log(dispatch(updateQuantityItems(cartItem)))
+     dispatch(updateQuantityItems(cartItem))
     }
 
     function subtractItems(cartItem){
-     console.log(dispatch(subtractQuantityItems(cartItem)))
+     dispatch(subtractQuantityItems(cartItem))
     }
   return (
       <>
@@ -40,7 +39,7 @@ export default function Addcart() {
           </div>
         </div>
         <div className="shopping-cart-price">
-          <p className="shopping-pricing">${parseInt(element.product.price) * element.quantity}</p>
+          <p className="shopping-pricing"> ₹ {parseInt(element.product.price) * element.quantity}</p>
         </div>
         <div className="shopping-cart-buy-btn">
           <button onClick={()=> handleRemoveCart(element.product.id)} className="place-your-order"><i className="fa-solid fa-xmark"></i></button>
@@ -48,7 +47,20 @@ export default function Addcart() {
       </div>
   </>
   )))}
+  {cart.cartTotalQuantity === 0 ? false:
+  <div className="Total-amount">
+    <div className="total-container">
+      <h3 className='total-quantity'>Total Quantity:</h3>
+    <p>{cart.cartTotalQuantity} <i className="fa-solid fa-box"></i></p>
+    <h3 className='total-product-amount'>Total Amount:</h3>
+    <p>₹ {cart.cartTotalAmount}</p>
+     <div className="checkout-btn">
+    <button className='checkoutcart-in_btn'><i className="fa-solid fa-check"></i> Checkout</button>
+     </div> 
+    </div>
+  </div>
+  }
   </section>
-    </>
+  </>
   )
 }

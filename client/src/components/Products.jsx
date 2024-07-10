@@ -14,7 +14,7 @@ export default function Products() {
           <ProductCard key={product.id} state={product} links={`/ProductDetails/${product.id}`} image={product.image}
           brand={product.brand}
           description={product.description}
-          formattedPrice={'$'+product.price}
+          formattedPrice={'₹ '+ product.price}
       >
        
       <button onClick={()=> dispatch(addToCard({productId:product.id,quantity:1,product:product}))} title="Sign In" className="addcart-in_btn">
