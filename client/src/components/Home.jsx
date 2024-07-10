@@ -1,8 +1,8 @@
-import { CCarousel, CCarouselCaption, CCarouselItem, CImage } from '@coreui/react';
 import img from '../assets/henry-co-cp-VMJ-mdKs-unsplash.jpg'
 import img2 from '../assets/jason-leung-DmD8HVOjy4c-unsplash.jpg'
 import img3 from '../assets/tuananh-blue-_sNZ8XOm52w-unsplash.jpg'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import ProductCard from './ProductCard';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -12,30 +12,28 @@ export default function Home() {
   const [trendingProducts,setTrendingProducts]=useState(trendingData)
   return (
     <>
-    <CCarousel className='my-2' controls indicators dark>
-    <CCarouselItem>
-      <CImage className="d-block w-100" src={img} alt="slide 1" />
-      <CCarouselCaption className="d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </CCarouselCaption>
-    </CCarouselItem>
-    <CCarouselItem>
-      <CImage className="d-block w-100" src={img2} alt="slide 2" />
-      <CCarouselCaption className="d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </CCarouselCaption>
-    </CCarouselItem>
-    <CCarouselItem>
-      <CImage className="d-block w-100" src={img3} alt="slide 3" />
-      <CCarouselCaption className="d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </CCarouselCaption>
-    </CCarouselItem>
-  </CCarousel>
-
+    <Carousel
+        dynamicHeight={true}
+        infiniteLoop={true}
+        autoPlay={true}
+        showStatus={false}
+        showArrows={false}
+        showThumbs={false}
+        interval={3000}
+      >
+        <div>
+          <img src={img} />
+          <p>Legend 1</p>
+        </div>
+        <div>
+          <img src={img2} />
+          <p>Legend 2</p>
+        </div>
+        <div>
+          <img src={img3} />
+          <p>Legend 3</p>
+        </div>
+      </Carousel>
   <h1 className='title-arrivals'>NEW ARRIVALS</h1>
   <section className='Trending'>
     {trendingProducts?.map((trending)=>(
