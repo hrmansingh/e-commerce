@@ -604,10 +604,14 @@ padding:  0 .8rem 0 0;
   text-decoration: none;
   background-color:white;
   border: none;
+  font-size: 20px;
   color: #25262A;
   padding: .5rem 1rem;
   border-radius: 5px;
+  border-radius: 50%;
 }
+
+
 .shopping-pricing{
   font-size: 40px;
   margin-top: 1.2rem;
@@ -619,7 +623,7 @@ padding:  0 .8rem 0 0;
   right: 0;
   font-size: 20px;
 }
-.place-your-order i{
+.place-your-order .xmark{
   color:rgb(241, 15, 15);
   box-shadow: 4px 5px 5px -3px rgba(0, 0, 0, 0.1);
   font-size: 30px;
