@@ -1,8 +1,8 @@
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import img from '../assets/henry-co-cp-VMJ-mdKs-unsplash.jpg'
 import img2 from '../assets/jason-leung-DmD8HVOjy4c-unsplash.jpg'
 import img3 from '../assets/tuananh-blue-_sNZ8XOm52w-unsplash.jpg'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import ProductCard from './ProductCard';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';

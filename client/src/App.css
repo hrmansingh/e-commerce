@@ -131,7 +131,7 @@ font-size: 14px;
 /* sign in */
 .form_container {
   width: fit-content;
-  height: fit-content;
+  height: 500px;
   display: flex;
   margin: 5rem auto;
   flex-direction: column;
@@ -497,7 +497,7 @@ font-size: 14px;
 .buy-now-btn,
 .product-price,
 .description-title-content{
-  padding-left: .5rem;
+  padding: .5rem;
 }
 .buynow-in_btn,
 .addcart-product-in_btn{
@@ -610,6 +610,7 @@ padding:  0 .8rem 0 0;
   padding: .5rem 1rem;
   border-radius: 5px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 
@@ -624,10 +625,10 @@ padding:  0 .8rem 0 0;
   right: 0;
   font-size: 20px;
 }
-.place-your-order .xmark{
-  color:rgb(241, 15, 15);
+.place-your-order{
   box-shadow: 4px 5px 5px -3px rgba(0, 0, 0, 0.1);
-  font-size: 30px;
+  font-size: 20px;
+  cursor: pointer;
 }
 .count-items{
   font-size: 30px;
@@ -636,7 +637,7 @@ padding:  0 .8rem 0 0;
 }
 .shopping-cart-heading{
 margin: 0;
-font-size: 50px;
+font-size: 30px;
 }
 .shopping-cart-content{
 margin: 0;
@@ -667,7 +668,8 @@ margin-top: .8rem;
 }
 .total-quantity,
 .total-product-amount{
-font-size: 29px;
+font-size: 24px;
+margin: .5rem;
 }
 
 .total-container p{
@@ -683,6 +685,7 @@ font-size: 29px;
 .checkoutcart-in_btn{
   text-decoration: none;
   background-color:#115DFC;
+  margin: .5rem;
   border: none;
   color: white;
   padding: .5rem 1rem;
@@ -691,7 +694,7 @@ font-size: 29px;
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  align-items: center;cursor: pointer;
   width: 100%;
 }
 .checkoutcart-in_btn i{
