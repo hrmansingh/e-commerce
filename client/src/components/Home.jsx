@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { trendingData } from '../data/trendingProductData';
 
+
 export default function Home() {
   const [trendingProducts,setTrendingProducts]=useState(trendingData)
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         showArrows={false}
         showThumbs={false}
         interval={3000}
-      >
+        >
         <div>
           <img src={img} />
           <p>Legend 1</p>
@@ -37,14 +38,14 @@ export default function Home() {
   <h1 className='title-arrivals'>NEW ARRIVALS</h1>
   <section className='Trending'>
     {trendingProducts?.map((trending)=>(
-  <ProductCard key={trending.id} links={'/products'} image={trending.image}
+      <ProductCard key={trending.id} links={'/products'} image={trending.image}
       brand={trending.brand}
       description={trending.description}
-    >
+      >
     <NavLink to={'/products'}><i className="fa-solid fa-arrow-right"></i></NavLink>
     </ProductCard>
 
-    ))}
+))}
   </section>
 
   <div className="payday-sale">
@@ -67,6 +68,6 @@ export default function Home() {
     </div>
   </div>
   </div>
-</>
+  </>
 )
 }

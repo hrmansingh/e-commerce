@@ -66,6 +66,13 @@ export const cartSlice = createSlice({
       if (itemIndex >= 0 && state.items[itemIndex].quantity > 1) {
         state.items[itemIndex].quantity--;
       }
+
+      // if( itemIndex ===0 && state.items[itemIndex].quantity ===1){
+      //   const nextcartItems = state.items.filter(
+      //     (item) => item.productId !== productId
+      //   );
+      //   state.items = nextcartItems;
+      // }
       state.cartTotalQuantity = state.items.reduce(
         (prev, curr) => prev + curr.quantity,
         0

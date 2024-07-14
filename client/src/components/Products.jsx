@@ -3,6 +3,7 @@ import { useState } from "react";
 import { productData } from "../data/productData";
 import { useDispatch } from "react-redux";
 import { addToCard } from "../redux/cartSlice";
+
 export default function Products() {
   const [data,setData]=useState(productData)
   const dispatch = useDispatch();
