@@ -67,7 +67,7 @@ export const cartSlice = createSlice({
         state.items[itemIndex].quantity--;
       }
 
-      // if( itemIndex ===0 && state.items[itemIndex].quantity ===1){
+      // if(state.items[itemIndex].quantity <=1){
       //   const nextcartItems = state.items.filter(
       //     (item) => item.productId !== productId
       //   );
