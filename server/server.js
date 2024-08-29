@@ -1,39 +1,23 @@
 import express from "express";
-import mongoose from "mongoose";
-const app = express();
+import cors from 'cors'
 import dotenv from "dotenv";
+import { db_connection } from "./DB Connection/db_connection.js";
+import { route } from "./routes/routes.js";
+// import { currUser } from "./middleware/authMiddleWare.js";
 dotenv.config();
 
-// import userRouter from "./routes/user";
-// import { loginRoute, registerRoute } from "./routes/auth.js";
+const app = express();
 
-import registerRouter from "./routes/auth.js";
+const port= process.env.PORT ||8080;
 
-const db = async () => {
-  mongoose.connect(`${process.env.DATABASE_URL}`);
-  console.log("Database connected");
-};
-db();
-function logger(req, res, next) {
-  console.log("logger");
-  next();
-}
-// app.use(logger);
-app.use("/login", registerRouter);
-app.use("/register", registerRouter);
-app.get("/", (req, res) => {
-  res.send("helo I'm the Home Page API");
-});
-app.get("/test", (req, res) => {
-  res.send("helo I'm test");
-});
 
-const start = async () => {
-  try {
-    app.listen(3000, () => console.log("Server is running on port 3000"));
-  } catch (err) {
-    console.log(err);
-  }
-};
+app.use(cors())
+// app.get('*',currUser);
+app.use(express.json())
+app.use(route)
 
-start();
+
+app.listen(port,()=>{
+  console.log(`http://localhost:${port}/user`);
+  db_connection()
+})
