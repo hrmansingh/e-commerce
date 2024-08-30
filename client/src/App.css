@@ -128,6 +128,15 @@ font-size: 14px;
   font-size: 30px;
   text-decoration: none;
 }
+.signOut{
+  text-decoration: none;
+  background-color:#115DFC;
+  border: none;
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
 /* sign in */
 .form_container {
   width: fit-content;

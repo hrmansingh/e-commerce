@@ -3,26 +3,24 @@ import { userModel } from '../models/user.js';
 import dotenv from 'dotenv'
 dotenv.config();
 
-export const currUser= (req,res,next)=>{
-    const token = req.cookies.jwt;
-    if(token){
-        jwt.verify(token,process.env.JWT_SIGNATURE, async (err,decodedToken)=>{
-            if(err){
-                console.log(err.message);
-                res.locals.user=null;
-            }else{
-                console.log(decodedToken);
-                let user = await userModel.findById(decodedToken.id);
-                res.locals.user=user;
-                next();
-            }
-        })
-    }else{
-        res.locals.user=null;
-        next();
+const requireAuth = async (req,res,next)=>{
+    const {authorization} = req.headers
+    if(!authorization){
+        return res.status(401).json({error:'Authorization token required'})    
     }
-
+    const token = authorization.split(' ')[1];
+    try {
+        const {_id} = jwt.verify(token,process.env.JWT_SIGNATURE);
+        req.user=await userModel.findOne({_id}).select('_id')
+        next()
+    } catch (error) {
+        console.log(error)
+        res.status(401).json({error:"required is Not authorized"})
+    }
 }
+
+
+export default requireAuth;
 
 
 

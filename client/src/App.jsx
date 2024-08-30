@@ -7,6 +7,7 @@ function App() {
 
   return (
     <>
+    
       <NavLinks admin={'Admin'} logo={"E-commerce"} home={"Home"} products={'Products'} signIn={'Sign In'} Addcart={<i className="fa-solid fa-cart-shopping"></i>} />
       <Outlet/>
       <Footer/>

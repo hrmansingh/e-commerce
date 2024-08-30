@@ -39,7 +39,7 @@ export default function Footer() {
                 <form>
                     <i className="far fa-envelope"></i>
                     <input type="email" placeholder="Enter your email" required />
-                    <button><i className="fas fa-play"></i></button>
+                    <button><i className="fa-solid fa-paper-plane"></i></button>
                 </form>
                 <div className="social-icons">
                     <a href="#"><i className="fab fa-facebook-f"></i></a>

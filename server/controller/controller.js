@@ -5,20 +5,13 @@ dotenv.config();
 
 
 
-//expire date jwt
+// expire date jwt
 const Max_age= 3*24*60*60
 
 
 // create token
-
-const createToken = (id)=>{
-    const payload={
-        id:user._id,
-        email:user.email
-    }
-    return jwt.sign(payload,process.env.JWT_SIGNATURE,{
-        expiresIn:Max_age
-    });
+const createToken = (_id)=>{
+    return jwt.sign({_id},process.env.JWT_SIGNATURE,{expiresIn:Max_age*100})
 }
 
 // get all data
@@ -42,48 +35,10 @@ export const getById_data =async (req,res)=>{
         res.status(200).json(User_data);
         console.log(User_data)
     } catch (error) {
-        res.status(400).json({error:error})
+        res.status(400).json({error:error.message})
     }
 }
 
-// create usere data
-export const UserCreateData=async (req,res)=>{
-    const {name,email,password} = req.body;
-
-    const User_create=new userModel({
-        name:name,
-        email:email,
-        password:password
-    })
-
-    const saved = await User_create.save();
-    try {
-        const token =createToken(User_create._id);
-        res.cookie('jwt',token,{httpOnly:true,Max_age:Max_age*1000})
-        res.status(200).json({User:User_create._id});
-        console.log(saved)
-    } catch (error) {
-           res.status(400).json({error:error})        
-    }
-}
-
-// UserLogin
-
-export const userLogin=async(req,res)=>{
-    const {email,password} = req.body;
-
-    try {
-        const User_login=await userModel.findOne({email});
-        const token= createToken(User_login);
-        if(!User_login){
-            throw new Error('User not found');
-        }
-        res.status(200).json({User_login:User_login,token:token});
-        res.cookie('jwt',token,{httpOnly:true,Max_age:Max_age});
-    } catch (error) {
-        res.status(400).json({error:error})
-    }
-}
 
 // update user data
 export const UserUpdateData=async (req,res)=>{
@@ -100,7 +55,7 @@ export const UserUpdateData=async (req,res)=>{
 // delete user data
 export const UserDeleteDate=async (req,res)=>{
     const {id} = req.params;
-
+    
     const delete_data=await userModel.findOneAndDelete({_id:id})
     try {
         res.status(200).json(delete_data);
@@ -110,9 +65,29 @@ export const UserDeleteDate=async (req,res)=>{
     }
 }
 
+// signup user
+export const UserCreateData=async (req,res)=>{
+    const {name,email,password} = req.body;
+   try {
+    const user=await userModel.signup(name,email,password)
+    const token = createToken(user._id)
+    res.status(200).json({email,token})
+   } catch (error) {
+    res.status(400).json({error:error.message})
+   }
 
-//logout
-export const get_logout=async(req,res)=>{
-    res.cookie('jwt','',{Max_age:1});
-    res.redirect('/login');
+}
+
+// UserLogin
+
+export const userLogin=async(req,res)=>{
+    const {email,password} = req.body;
+
+   try {
+    const user= await userModel.login(email,password)
+    const token = createToken(user._id)
+    res.status(200).json({email,token})
+   } catch (error) {
+    res.status(400).json({error:error})
+   }
 }

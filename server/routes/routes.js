@@ -1,21 +1,16 @@
 import express from "express";
-import { get_allData, get_logout, getById_data, UserCreateData, UserDeleteDate, userLogin, UserUpdateData } from "../controller/controller.js";
+import { get_allData, getById_data, UserCreateData, UserDeleteDate, userLogin, UserUpdateData } from "../controller/controller.js";
 
 export const route = express.Router();
 
-// get all adat
+// get all user data
 route.get('/user',get_allData)
 
 
-// get by Id
+// get user data by Id 
 route.get('/user/:id',getById_data)
 
 
-// create user data
-route.post('/user',UserCreateData)
-
-// user login
-route.post('/user/login',userLogin)
 
 // update user data
 route.patch('/user/:id',UserUpdateData)
@@ -25,8 +20,8 @@ route.patch('/user/:id',UserUpdateData)
 route.delete('/user/:id',UserDeleteDate)
 
 
+// create user data register
+route.post('/signup',UserCreateData)
 
-// logout 
-
-route.get('/user/logout',get_logout);
-
+// user login
+route.post('/login',userLogin)

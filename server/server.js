@@ -3,16 +3,15 @@ import cors from 'cors'
 import dotenv from "dotenv";
 import { db_connection } from "./DB Connection/db_connection.js";
 import { route } from "./routes/routes.js";
-// import { currUser } from "./middleware/authMiddleWare.js";
+
 dotenv.config();
 
 const app = express();
 
-const port= process.env.PORT ||8080;
+const port= process.env.PORT || 8080;
 
 
 app.use(cors())
-// app.get('*',currUser);
 app.use(express.json())
 app.use(route)
 
