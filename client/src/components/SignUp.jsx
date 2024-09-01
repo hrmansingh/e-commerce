@@ -4,7 +4,6 @@ import { NavLink,useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 export default function SignUp() {
-  const [user,SetUsers]=useState([])
   const [name ,setName]=useState();
   const[email,setEmail]=useState('');
   const[password,setPassword]=useState('');

@@ -4,7 +4,6 @@ import { NavLink, useNavigate} from "react-router-dom";
 
 
 export default function SignIn() {
-  const[user,setUser]=useState([])
   const[email,setEmail]=useState('');
   const[password,setPassword]=useState('');
   const navigate = useNavigate()
@@ -12,7 +11,7 @@ export default function SignIn() {
     fetchUser();
   },[])
   const fetchUser=()=>{
-    axios.get('http://localhost:3000/user').then((res)=> console.log(res.data)).catch((error)=> console.log({error:error}))
+    axios.get('http://localhost:3000/user').then((res)=> res.data).catch((error)=> console.log({error:error}))
   }
   async function submitForm(e){
     e.preventDefault();
@@ -25,7 +24,10 @@ export default function SignIn() {
      fetchUser()
      navigate('/')
      localStorage.setItem('token',token)
+     localStorage.setItem('email',email)
+
     } catch (error) {
+      alert('Invalid Login and Password')
       console.log(error)
     }
   }
