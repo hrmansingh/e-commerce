@@ -4,6 +4,12 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+.form-data button{
+color: #000;
+}
+.form-data[name='image']{
+  color: black;
+}
 /* logo */
 .logo{
   font-size: 30px;
